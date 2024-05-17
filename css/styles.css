@@ -1,0 +1,787 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* GENERAL SETTING */
+body {
+    font-family: "Montserrat", sans-serif;
+    color: var(--black);
+}
+
+/* colors */
+:root {
+    --primary: #004AB9;
+    --primary-tint: #c4d8ff;
+    --secondary: #fff6cb;
+    --white: #ffffff;
+    --black:#333333;
+    --grey:#6c6c6c;
+    --light-grey: #cccccc;
+}
+
+/* Titles */
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Primary button */
+.primary-button {
+    text-decoration: none;
+    background-color: var(--primary);
+    color: white;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    display: block;
+}
+
+/* ----- Navigation bar ----- */
+header {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 0.125em var(--primary-tint);
+    background-color: var(--white);
+    box-shadow: 0px 0px 16px 0px #74abff80;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/* Logo + Menu items + Burger Menu */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+#logo-link {
+    z-index: 1;
+    /* Without this id, the logo won't be show on top */
+}
+
+#logo {
+    width: 12em;
+    height: auto;
+    margin-left: 1em;
+}
+
+/* Burger Menu */
+header nav i {
+    font-size: 2rem;
+    padding-right: 1em;
+    z-index: 1;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* Menu items */
+header nav ul {
+    position: absolute;
+    background-color: var(--white);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 22em;
+    padding-bottom: 1em;
+    padding-left: 0;
+    transform: translateY(-200%);
+    /* Used to hide menu before click hamburger menu */
+    transition: transform 1s;
+}
+
+/* Show is used to show menu in js, and without this code menu cannot be showed */
+.show {
+    transform: translateY(0)
+}
+
+header nav ul li {
+    list-style: none;
+    text-align: center;
+    padding:1em;
+    width: 100%;
+}
+
+header nav ul li:hover {
+    background-color: var(--primary-tint);
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight:500;
+}
+
+/*----------| PAGE 1: HOME (MOBILE VIEW)|----------*/
+/* -----Section: Cover----- */
+#section-cover {
+    background-image: url('../img/cover.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white; 
+    padding-top: 7.125em;
+}
+
+#section-cover h1 {
+    padding-top: 5.5em;
+    padding-bottom: 5.5em;
+    margin: 0;
+}
+
+/* -----Section: What are you looking for?----- */
+#section-search {
+    background-color: var(--primary-tint);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;   
+}
+
+#section-search h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Inputs - Search */
+#inputs {
+    border: solid 1px var(--grey);
+    border-radius: 0.5em;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Inputs - Search: Search by */
+#search-by {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-bottom: solid 0.0625em var(--grey);  
+}
+
+/* Inputs - Search: Type to search */
+#type-to-search {
+    position: relative;
+    overflow: hidden;
+}
+
+#input-type-to-search {
+    width: 100%;
+    padding: 1.2em;
+    border: none;
+    box-sizing: border-box;
+}
+
+#button-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#icon-search {
+    width: 3em;
+}
+
+/* -----Section: Upcoming events----- */
+.card {
+    margin-bottom: 1em;
+}
+
+#upcoming-events {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1em;
+    grid-template-areas:
+    "title-upcoming-events title-upcoming-events"
+    "card-1 card-2"
+    "card-3 card-4"
+    "button-events button-events";
+    padding-top: 2.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+.card-name {
+    font-weight: bold;
+}
+
+.card-icon {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.date-time {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.date-time p {
+    margin: 0;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+/* Upcoming Events - Title */
+#title-upcoming-events {
+    grid-area: title-upcoming-events;
+    text-align: center;
+}
+
+/* Card 1 */
+#card-1 {
+    grid-area: card-1;
+}
+
+/* Card 2 */
+#card-2 {
+    grid-area: card-2;
+}
+
+/* Card 3 */
+#card-3 {
+    grid-area: card-3;
+}
+
+/* Card 4 */
+#card-4 {
+    grid-area: card-4;
+}
+
+/* Button - View all events */
+#button-events {
+    grid-area: button-events;
+}
+
+/* -----Section: Most favorite book genres-----  */
+#favorite-genres {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1em;
+    grid-template-areas:
+    "favorite-genres favorite-genres"
+    "card-5 card-6"
+    "card-7 card-8"
+    "button-genres button-genres";
+    padding-top: 2.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Favorite genres - Title */
+#title-favorite-genres {
+    grid-area: favorite-genres;
+    text-align: center;
+}
+
+/* Card 5 */
+#card-5 {
+    grid-area: card-5;
+}
+
+/* Card 6 */
+#card-6 {
+    grid-area: card-6;
+}
+
+/* Card 7 */
+#card-7 {
+    grid-area: card-7;
+}
+
+/* Card 8 */
+#card-8 {
+    grid-area: card-8;
+}
+
+/* Button - View all genres */
+#button-genres {
+    grid-area: button-genres;
+}
+
+/* -----Section: Programs and Services----- */
+#programs-and-services {
+    background-color: var(--secondary);
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+#programs {
+    margin-bottom: 4em;
+}
+
+#services {
+    grid-area: services;
+}
+
+.description-programs, .description-services {
+    text-align: center;
+}
+
+/* -----Section: Support Us----- */
+#support-us {
+    padding-left: 1em;
+    padding-right:1em;
+    margin-bottom: 4em;
+}
+
+#description-support {
+    text-align: center;
+}
+
+.button-secondary {
+    display: flex;
+    align-items: center;
+    color: var(--black);
+    font-weight: bold;
+    padding: 1em;
+    border: solid 0.0625em var(--light-grey);
+    background-color: var(--primary-tint);
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.button-secondary img {
+    width: 2.5em;
+}
+
+.button-secondary-chevron {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+/* -----Footer----- */
+#footer {
+    background-color: var(--primary);
+    color: var(--white);
+    font-weight: 500;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    text-align: center;
+}
+
+/*----------| PAGE 2: EVENTS (MOBILE VIEW) |----------*/
+.events-page {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "title-events-page title-events-page"
+    "description-events description-events"
+    "card-1 card-2"
+    "card-3 card-4"
+    "events-end-text events-end-text";
+    gap: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#title-events-page {
+    grid-area: title-events-page;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#description-events {
+    grid-area: description-events;
+    width: 100%;
+    text-align: center;
+}
+
+.events-end-text {
+    grid-area: events-end-text;
+    text-align: center;
+}
+
+/* ----------| PAGE 3: SUPPORT US (MOBILE VIEW) |---------- */
+.support-us {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.support-us h1 {
+    text-align: center;
+}
+
+.card-support-us {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    margin-bottom: 1em;
+    border: solid 1px var(--light-grey);
+    border-radius: 0.5em;
+    padding: 1em;
+    background-color: var(--white);
+}
+
+.icon-support-us {
+    width: 4em;
+}
+
+/*----------| PAGE 4: ABOUT (MOBILE VIEW) |----------*/
+.about {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 10em;
+}
+
+.about h1 {
+    text-align: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+.about-section {
+    margin-bottom: 4em;
+}
+
+/*----------| PAGE 5: CONTACT (MOBILE VIEW) |----------*/
+.contact-page {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#contact-info {
+    margin-bottom: 5em;
+    text-align: center;
+}
+
+#contact-form{
+    border: solid 0.0625em var(--light-grey);
+    padding: 1em;
+    border-radius: 0.5em;
+    background-color: var(--white);
+}
+
+#name, #email, #phone-number {
+    width: 100%;
+    border: solid 0.0625em var(--light-grey);
+    border-radius: 0.5em;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+#button-submit {
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.contact-info-item {
+    margin-bottom: 2em;
+}
+
+.contact-info-label {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.contact-info-content {
+    font-weight: 500;
+}
+
+/* ~~~~~~~~~~~ RESPONSIVE SCREEN ~~~~~~~~~~~ */
+@media only screen and (min-width:62.5em) {
+
+    /* Navigation bar */
+    header nav {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    header nav i.fa-bars {
+        display: none;
+        /* Hide the hamburger menu*/
+    }
+
+    header nav ul {
+        flex-direction: row;
+        transform: translateY(0);
+        position: static; 
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        justify-content: flex-end;
+    }
+
+    header nav ul li {
+        width: auto;
+        border-radius: 0.5em;
+    }
+   /*----------| PAGE 1: HOME (DESKTOP VIEW) |----------*/
+    /* -----Section: What are you look for----- */
+    #inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "search-by type-to-search type-to-search type-to-search"
+        "search-by type-to-search type-to-search type-to-search";
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    #search-by {
+        grid-area: search-by;
+        border-right: solid 0.0625em var(--black);
+        border-bottom: none;
+    }
+
+    #type-to-search {
+        grid-area: type-to-search;
+    }
+    
+    /* -----Section: Upcoming Events----- */
+    #upcoming-events {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title-upcoming-events title-upcoming-events title-upcoming-events title-upcoming-events"
+        "card-1 card-2 card-3 card-4"
+        "button-events button-events button-events button-events";
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    /* Button - Event */
+    #button-events {
+        grid-column: 2 / 4;
+        margin: auto;
+    }
+    
+    /* -----Section: Most favorite book genres-----  */
+    #favorite-genres {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "favorite-genres favorite-genres favorite-genres favorite-genres"
+        "card-5 card-6 card-7 card-8"
+        "button-genres button-genres button-genres button-genres";
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    /* Button - Genres */
+    #button-genres {
+        grid-column: 2 / 4;
+        margin: auto;
+    }
+
+    /* -----Section: Program and Services----- */
+
+    #programs-and-services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "programs services"
+        "programs services";
+        gap: 1em;
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    #programs {
+        grid-area: programs;
+    }
+
+    #services {
+        grid-area: services;
+    }
+
+    /* -----Section: Support Us----- */  
+    #support-us {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "title-support title-support image-support image-support"
+        "description-support description-support image-support image-support"
+        "buttons-support buttons-support image-support image-support";
+        gap: 1em;
+        padding-left: 5em;
+        padding-right: 5em;
+    }  
+
+    #title-support {
+        grid-area: title-support;
+        text-align: left;
+    }
+
+    #image-support {
+        grid-area: image-support;
+        overflow: hidden;
+    }
+
+    #description-support {
+        grid-area: description-support;
+        text-align: left;
+    }
+
+    .buttons-support {
+        grid-area: buttons-support;
+    }   
+
+    /*----------| PAGE 2: EVENTS (DESKTOP VIEW) |----------*/
+    .events-page {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title-events-page title-events-page title-events-page title-events-page"
+        "description-events description-events description-events description-events"
+        "card-1 card-2 card-3 card-4"
+        "events-end-text events-end-text events-end-text events-end-text";
+        gap: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    /* ----------| PAGE 3: SUPPORT US (DESKTOP VIEW) |---------- */
+    .support-us {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title-support-us title-support-us title-support-us"
+        "description-support-us description-support-us description-support-us"
+        "card-donate-money card-donate-book card-volunteer";
+        gap: 1em;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    #title-support-us {
+        grid-area: title-support-us;
+        margin-bottom: 0;
+        
+    }
+
+    #description-support-us {
+        grid-area: description-support-us;
+        text-align: center;
+    }
+
+    #card-donate-money {
+        grid-area: card-donate-money;
+    }
+
+    #card-donate-book {
+        grid-area: card-donate-book;
+    }
+
+    #card-volunteer {
+        grid-area: card-volunteer;
+    }
+
+    /*----------| PAGE 4: ABOUT (DESKTOP VIEW) |----------*/
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "title-about-us title-about-us title-about-us"
+        "about-mission about-community about-supporting";
+        gap: 1em;
+        padding-left: 5em;
+        padding-right: 5em;
+        margin-bottom: 5em;
+    }
+
+    #title-about-us {
+        grid-area: title-about-us;
+        width: 100%;
+    }
+
+    #about-mission {
+        grid-area: about-mission;
+    }
+
+    #about-community {
+        grid-area: about-community;
+    }
+
+    #about-supporting {
+        grid-area: about-supporting;
+    }
+
+    /*----------| PAGE 5: CONTACT (DESKTOP VIEW) |----------*/
+    .contact-page {
+        display: flex;
+        gap: 3em;
+        padding-left: 5em;
+        padding-right: 5em;
+        margin: auto;
+        justify-content: center;
+    }
+
+    #contact-info {
+        text-align: left;
+        padding-top: 1.5em;
+    }
+
+    #contact-info h2 {
+        text-align: left;
+    }
+
+    #contact-form {
+        max-width: 31.25em;
+        padding: 1.5em;
+    }
+}

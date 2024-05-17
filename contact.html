@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/bf9d4bbbeb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!---------- HEADER START ---------->
+    <header>
+      <!-- Navigation bar -->
+      <nav>
+        <!-- Logo -->
+        <a id="logo-link" href="index.html"
+          ><img src="img/logo.png" alt="Maplebrook logo" id="logo"
+        /></a>
+        <!-- Burger Menu -->
+        <i class="fa-solid fa-bars" onclick="mobileMenu()"></i>
+        <!-- Menu items -->
+        <ul class="menu-items">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="support-us.html">Support us</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!---------- HEADER ENDS ---------->
+    <!---------- MAIN STARTS ---------->
+    <main class="contact-page">
+      <!-- Contact Info -->
+      <section id="contact-info">
+        <h2>Contact Information</h2>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Address:</p>
+          <p class="contact-info-content">100 Maplebrook Drive</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Hotline:</p>
+          <p class="contact-info-content">+1 888 999 0000</p>
+        </div>
+        <div class="contact-info-item">
+          <p class="contact-info-label">Email:</p>
+          <p class="contact-info-content">contact@maplebrook.ca</p>
+        </div>
+      </section>
+      <!-- Form -->
+      <form
+        id="contact-form"
+        action="mailto:contact@maplebrook.ca"
+        method="post"
+        enctype="text/plain"
+      >
+        <h2>Or leave your information and we will contact you</h2>
+        <p>
+          we typically respond promptly within 24 hours to ensure your needs are
+          met efficiently.
+        </p>
+        <!-- Input: Your Name -->
+        <div class="name">
+          <label for="name">Your name</label><br />
+          <input type="text" id="name" name="name" placeholder="E.g: Peter" />
+        </div>
+        <br />
+        <!-- Input: Email -->
+        <div class="email">
+          <label for="email">Email</label><br />
+          <input
+            type="email"
+            id="email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-z A-Z 0-9.-]+\.[a-z A-Z]{2,}"
+            name="email"
+            placeholder="Enter your email here"
+          />
+        </div>
+        <br />
+        <!-- Input: Phone number -->
+        <div class="phone-number">
+          <label for="phone-number">Phone number</label><br />
+          <input
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            pattern="[0-9]*"
+            placeholder="Enter your phone number here"
+          />
+        </div>
+        <!-- Sumit Button -->
+        <input id="button-submit" type="submit" />
+      </form>
+    </main>
+    <!---------- MAIN ENDS ---------->
+    <!---------- FOOTER STARTS ---------->
+    <footer id="footer">
+      <p>
+        Address:<br />
+        100 Maplebrook Drive
+      </p>
+      <p>
+        Hotline:<br />
+        +1 888 999 0000
+      </p>
+      <p>© Maplebrook. All rights reserved.</p>
+    </footer>
+    <!---------- FOOTER ENDS ---------->
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

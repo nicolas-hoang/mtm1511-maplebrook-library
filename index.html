@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/bf9d4bbbeb.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!---------- HEADER START ---------->
+    <header>
+      <!-- Navigation bar -->
+      <nav>
+        <!-- Logo -->
+        <a id="logo-link" href="index.html"
+          ><img src="img/logo.png" alt="Maplebrook logo" id="logo"
+        /></a>
+        <!-- Burger Menu -->
+        <i class="fa-solid fa-bars" onclick="mobileMenu()"></i>
+        <!-- Menu items -->
+        <ul class="menu-items">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="support-us.html">Support us</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!---------- HEADER ENDS ---------->
+    <!---------- MAIN STARTS ---------->
+    <main class="wrapper">
+      <!-- Section: Cover -->
+      <section id="section-cover">
+        <h1>WELCOME TO <br />MAPLEBROOK</h1>
+      </section>
+      <!-- Section: What are you looking for? -->
+      <section id="section-search">
+        <h2>What are you looking for?</h2>
+        <div id="inputs">
+          <!-- Input: Search by -->
+          <select id="search-by" name="search-by">
+            <option selected hidden>Search by</option>
+            <!-- "disabled": prevents the user from selecting the placeholder option.
+            "selected": marks the option as pre-selected when the dropdown is opened.
+            "hidden": hides the placeholder option from the dropdown list. 
+          -->
+            <option>All</option>
+            <option>Book Genres</option>
+            <option>Events</option>
+            <option>Programs</option>
+            <option>Services</option>
+          </select>
+          <!-- <br /> -->
+          <!-- Input: Type to search -->
+          <div id="type-to-search">
+            <input
+              type="text"
+              id="input-type-to-search"
+              name="input-type-to-search"
+              placeholder="Type to search here"
+            />
+            <button type="submit" id="button-search">
+              <img
+                src="img/icon-search.png"
+                alt="Search Icon"
+                id="icon-search"
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Upcoming Events -->
+      <section id="upcoming-events">
+        <h2 class="section-title" id="title-upcoming-events">
+          Upcoming Events
+        </h2>
+        <!-- Card 1 -->
+        <div class="card" id="card-1">
+          <img
+            class="card-image"
+            src="img/maplebrook-literary-festival.jpg"
+            alt="Group of people taking happily in meeting and looking at the laptop"
+          />
+          <p class="card-name">Maplebrook Literary Festival</p>
+          <div class="date-time">
+            <img
+              class="card-icon"
+              src="img/icon-calendar.png"
+              alt="Icon calendar"
+            />
+            <p>1 March 2024</p>
+          </div>
+          <div class="location">
+            <img
+              class="card-icon"
+              src="img/icon-location.png"
+              alt="Icon location"
+            />
+            <p>Room 121</p>
+          </div>
+        </div>
+        <!-- Card-2 -->
+        <div class="card" id="card-2">
+          <img
+            class="card-image"
+            src="img/cultural-fair.jpg"
+            alt="The scene of a fair inside a building with a lot of people"
+          />
+          <p class="card-name">Cultural Fair</p>
+          <div class="date-time">
+            <img
+              class="card-icon"
+              src="img/icon-calendar.png"
+              alt="Icon calendar"
+            />
+            <p>1 March 2024</p>
+          </div>
+          <div class="location">
+            <img
+              class="card-icon"
+              src="img/icon-location.png"
+              alt="Icon location"
+            />
+            <p>Room 121</p>
+          </div>
+        </div>
+        <!-- Card-3 -->
+        <div class="card" id="card-3">
+          <img
+            class="card-image"
+            src="img/community-art-exhibition.jpg"
+            alt="The scene of an art exhibition with some people looking at the pictures hung on the wall and taking photos of them"
+          />
+          <p class="card-name">Community Art Exhibition</p>
+          <div class="date-time">
+            <img
+              class="card-icon"
+              src="img/icon-calendar.png"
+              alt="Icon calendar"
+            />
+            <p>1 March 2024</p>
+          </div>
+          <div class="location">
+            <img
+              class="card-icon"
+              src="img/icon-location.png"
+              alt="Icon location"
+            />
+            <p>Room 121</p>
+          </div>
+        </div>
+        <!-- Card-4 -->
+        <div class="card" id="card-4">
+          <img
+            class="card-image"
+            src="img/maplebrook-book-swap.jpg"
+            alt="A person is putting a book on the bookshelf"
+          />
+          <p class="card-name">Maplebrook Book Swap</p>
+          <div class="date-time">
+            <img
+              class="card-icon"
+              src="img/icon-calendar.png"
+              alt="Icon calendar"
+            />
+            <p>1 March 2024</p>
+          </div>
+          <div class="location">
+            <img
+              class="card-icon"
+              src="img/icon-location.png"
+              alt="Icon location"
+            />
+            <p>Room 121</p>
+          </div>
+        </div>
+        <!-- button: View all events-->
+        <a class="primary-button" id="button-events" href="events.html"
+          >View all events</a
+        >
+      </section>
+      <!-- Section: Most favorite book genres -->
+      <section id="favorite-genres">
+        <h2 class="section-title" id="title-favorite-genres">
+          Most Favorite Book Genres
+        </h2>
+        <!-- Card 5 -->
+        <div class="card" id="card-5">
+          <img
+            class="card-image"
+            src="img/fiction.jpg"
+            alt="Illustration for fiction books includes a person throwing dust into the air"
+          />
+          <p class="card-name">Fiction</p>
+          <p>1000 people love this</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="card" id="card-6">
+          <img
+            class="card-image"
+            src="img/mystery-and-thriller.jpg"
+            alt="Illustration for mystery and thriller books includes a black figure propped up against glass"
+          />
+          <p class="card-name">Mystery and Thriller</p>
+          <p>1000 people love this</p>
+        </div>
+        <!-- Card 7 -->
+        <div class="card" id="card-7">
+          <img
+            class="card-image"
+            src="img/romance.jpg"
+            alt="Illustration for the romance book genre includes images of a two people leaning their heads together"
+          />
+          <p class="card-name">Romance</p>
+          <p>1000 people love this</p>
+        </div>
+        <!-- Card 8 -->
+        <div class="card" id="card-8">
+          <img
+            class="card-image"
+            src="img/horror.jpg"
+            alt="Illustration for the horror book genre includes a picture of a screaming person"
+          />
+          <p class="card-name">Horror</p>
+          <p>1000 people love this</p>
+        </div>
+        <!-- button: View all genres -->
+        <a class="primary-button" id="button-genres" href="#"
+          >View all genres</a
+        >
+      </section>
+      <!-- Section: Programs and Services -->
+      <div id="programs-and-services">
+        <!-- Section: Programs -->
+        <section id="programs">
+          <h2>Programs</h2>
+          <p class="description-programs">
+            Diverse programs catering to all ages, from interactive storytelling
+            sessions for children to book clubs and workshops for adults.
+          </p>
+          <img
+            class="card-image"
+            src="img/programs.jpg"
+            alt="The Library scene and a man is reading a book"
+          />
+          <a class="primary-button" id="button-programs" href="#"
+            >Explore all programs</a
+          >
+        </section>
+        <!-- Section: Services -->
+        <section id="services">
+          <h2>Services</h2>
+          <p class="description-services">
+            A diverse range of services including book lending, digital
+            resources access, educational programs, and community events.
+          </p>
+          <img
+            class="card-image"
+            src="img/services.jpg"
+            alt="A woman is standing at the cashier"
+          />
+          <a class="primary-button" id="button-services" href="#"
+            >Explore all services</a
+          >
+        </section>
+      </div>
+      <!-- Section: Support us -->
+      <section id="support-us">
+        <h2 id="title-support">Support Us</h2>
+        <img
+          class="card-image"
+          id="image-support"
+          src="img/support-us.jpg"
+          alt="Image of hands clasped together"
+        />
+        <p id="description-support">
+          Join our community in fostering literacy and education by contributing
+          to Maplebrook Library. Your donations help us expand our collection,
+          host events, and provide valuable resources to patrons of all ages.
+        </p>
+        <!-- Button: Donate Money -->
+        <div class="buttons-support">
+          <a class="button-secondary" href="support-us.html"
+            ><img src="img/icon-money.png" alt="Icon for donating money" />
+            Donate Money
+            <div class="button-secondary-chevron">
+              <img src="img/icon-chevron.png" alt="Icon Chevron" /></div
+          ></a>
+          <!-- Button: Donate Books -->
+          <a class="button-secondary" href="support-us.html"
+            ><img src="img/icon-book.png" alt="Icon for donating books" />
+            Donate Books
+            <div class="button-secondary-chevron">
+              <img src="img/icon-chevron.png" alt="Icon Chevron" /></div
+          ></a>
+          <!-- Button: Become a Volunteer -->
+          <a class="button-secondary" href="support-us.html"
+            ><img
+              src="img/icon-volunteer.png"
+              alt="Icon for becoming a volunteer" />
+            Become a Volunteer
+            <div class="button-secondary-chevron">
+              <img src="img/icon-chevron.png" alt="Icon Chevron" /></div
+          ></a>
+        </div>
+      </section>
+    </main>
+    <!---------- MAIN ENDS ---------->
+    <!---------- FOOTER STARTS ---------->
+    <footer id="footer">
+      <p>
+        Address:<br />
+        100 Maplebrook Drive
+      </p>
+      <p>
+        Hotline:<br />
+        +1 888 999 0000
+      </p>
+      <p>© Maplebrook. All rights reserved.</p>
+    </footer>
+    <!---------- FOOTER ENDS ---------->
+    <!-- Javascript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
